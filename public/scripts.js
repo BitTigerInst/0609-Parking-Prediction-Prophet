@@ -13,12 +13,54 @@ $(function () {
         // Create the chart
         $('#container').highcharts('StockChart', {
 
-            rangeSelector: {
-                selected: 1
-            },
-
             title: {
-                text: 'Parking Pccupancy Prediction'
+                text: 'Parking Occupancy Prediction',
+                style: {
+//                    color: '#FF00FF',
+//                    fontWeight: 'bold',
+                    fontSize: '32px'
+                },
+                margin: 40
+            },
+            rangeSelector: {
+                allButtonsEnabled: true,
+                buttons: [{
+                    type: 'day',
+                    count: 1,
+                    text: 'today',
+                    dataGrouping: {
+                        forced: true,
+                        units: [['hour', [1]]]
+                    }
+                }, {
+                    type: 'day',
+                    count: 3,
+                    text: 'last 3 days',
+                    dataGrouping: {
+                        forced: true,
+                        units: [['hour', [1]]]
+                    }
+                }, {
+                    type: 'day',
+                    count: 7,
+                    text: 'last week',
+                    dataGrouping: {
+                        forced: true,
+                        units: [['hour', [1]]]
+                    }
+                }, {
+                    type: 'month',
+                    count: 1,
+                    text: 'last month',
+                    dataGrouping: {
+                        forced: true,
+                        units: [['day', [1]]]
+                    }
+                }],
+                buttonTheme: {
+                    width: 100
+                },
+                selected: 1
             },
 
             series: [{
@@ -33,6 +75,7 @@ $(function () {
                     valueDecimals: 0
                 }
             }]
+            
         });
     });
 });
