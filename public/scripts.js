@@ -1,4 +1,16 @@
 $(function () {
+    $('.datepicker-from').pickadate({
+        format: 'mmm dd, yyyy',
+        formatSubmit: 'yyyy/mm/dd'
+    });
+    $('.datepicker-to').pickadate({
+        format: 'mmm dd, yyyy',
+        formatSubmit: 'yyyy/mm/dd'
+//        ,
+//        min: start_date
+    });
+    
+    
     $.getJSON('predict.json', function (data) {
         
         var myData = [];
@@ -11,7 +23,7 @@ $(function () {
         }
         console.log(myData);
         // Create the chart
-        $('#container').highcharts('StockChart', {
+        $('#chart_container').highcharts('StockChart', {
 
             title: {
                 text: 'Parking Occupancy Prediction',

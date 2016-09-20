@@ -3,18 +3,31 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="./public/styles.css">
+        <link rel="stylesheet" href="./public/lib/default.css">
+        <link rel="stylesheet" href="./public/lib/default.date.css">
     </head>
     <body>
-        
-        <div id="container" style="margin: 0 auto; width:90%; height:600px;"></div>
+        <div id="date_container" style="margin: 0 auto; width:90%;">
+            <h2>Please choose the prediction period</h2>
+            <form class="input-container" action="/">
+                <span>From</span>
+                <input type="text" name="from" class="datepicker">
+                <span>To</span>
+                <input type="text" name="to" class="datepicker">
+                <button type="submit">GO!</button>
+            </form>
+        </div>
+        <div id="chart_container" style="margin: 0 auto; width:90%; height:600px; display:none"></div>
         
 <!--
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 -->
-        <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
         <script src="http://code.highcharts.com/stock/highstock.js"></script>
         <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+        <script src="./public/lib/picker.js"></script>
+        <script src="./public/lib/picker.date.js"></script>
         <script src="./public/scripts.js"></script>
     </body>
 </html>
