@@ -5,16 +5,18 @@
         <link rel="stylesheet" href="./public/styles.css">
         <link rel="stylesheet" href="./public/lib/default.css">
         <link rel="stylesheet" href="./public/lib/default.date.css">
+        <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
     <body>
-        <div id="date_container" style="margin: 0 auto; width:90%;">
-            <h2>Please choose the prediction period</h2>
+        <div id="date_container">
+            <h1>Predict your parking occupancy</h1>
             <form class="input-container" action="/">
-                <span>From</span>
-                <input type="text" name="from" class="datepicker">
-                <span>To</span>
-                <input type="text" name="to" class="datepicker">
-                <button type="submit">GO!</button>
+                <span class="label">From</span>
+                <input type="text" name="from" class="datepicker-from">
+                <span class="label">To</span>
+                <input type="text" name="to" class="datepicker-to">
+                <span type="submit" class="hexagon">Go!</span>
             </form>
         </div>
         <div id="chart_container" style="margin: 0 auto; width:90%; height:600px; display:none"></div>
