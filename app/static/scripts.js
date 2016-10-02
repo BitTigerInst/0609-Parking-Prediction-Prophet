@@ -11,8 +11,9 @@ $(function () {
     });
     
     
-    $.getJSON('predict.json', function (data) {
-        
+    //$.getJSON('predict.json', function (data) {
+    $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    $.getJSON($SCRIPT_ROOT + "/predict.json", function (data) {    
         var myData = [];
         for(var i in data){
             var item = data[i];
