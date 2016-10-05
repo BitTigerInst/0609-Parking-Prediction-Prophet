@@ -26,9 +26,14 @@ from sklearn.tree import DecisionTreeRegressor
 clf = DecisionTreeRegressor(random_state = 0)
 clf = clf.fit(X,y)
 
+'''
+save model to model/name.pkl for later call at flask app
+from sklearn.externals import joblib
+joblib.dump(clf, 'model/nb.pkl')
+'''
 
 '''
-predict part
+predict part, and save as json format
 '''
 with open('test.csv','rb') as f:
 	reader = unicodecsv.DictReader(f)

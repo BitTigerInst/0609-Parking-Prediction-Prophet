@@ -1,3 +1,6 @@
+//v1.1
+
+
 $(function () {
     $('.datepicker-from').pickadate({
         format: 'mmm dd, yyyy',
@@ -12,8 +15,10 @@ $(function () {
     
     
     //$.getJSON('predict.json', function (data) {
-    $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
-    $.getJSON($SCRIPT_ROOT + "/predict.json", function (data) {    
+    //$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    //console.log($SCRIPT_ROOT);
+    //$.getJSON($SCRIPT_ROOT + "/test", function (data) {  
+    $.getJSON('/test', function(data){  
         var myData = [];
         for(var i in data){
             var item = data[i];
