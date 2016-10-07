@@ -50,7 +50,7 @@ body {
     line-height: 25px;
 }
 
-#date_container .hexagon {
+.hexagon {
     display: inline-block;
     vertical-align: middle;
     margin-left: 20px;
@@ -64,6 +64,7 @@ body {
   margin: 11.55px 0;
   border-left: solid 1px #ffffff;
   border-right: solid 1px #ffffff;
+  text-align: center;
 }
 
 .hexagon:before,
@@ -91,61 +92,92 @@ body {
   border-left: solid 1.4142px #ffffff;
 }
 
-#date_container .hexagon:hover, #date_container .hexagon:hover:after, #date_container .hexagon:hover:before {
+.hexagon:hover, .hexagon:hover:after, .hexagon:hover:before {
     background: white;
     color: #1ec79b;
     cursor: pointer;
 }
 
-/*
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
+#chart_container {
+    margin: 3% auto; 
+    width: 90%; 
+    height: 600px; 
+    display: block;
 }
 
-.bar {
-  fill: orange;
+rect.highcharts-button-box {
+    fill: rgba(255,255,255,0.7);
+}
+g.highcharts-button.highcharts-button-pressed rect.highcharts-button-box {
+    fill: white;
 }
 
-.bar:hover {
-  fill: orangered ;
+rect.highcharts-label-box {
+    fill: rgba(255,255,255,0.7);
+    stroke: none;
 }
 
-.x.axis path {
-  display: none;
+
+g.highcharts-markers.highcharts-series-0.highcharts-line-series.highcharts-color-0.highcharts-tracker path {
+    fill: rgba(255,255,255,0.8);
 }
 
-.d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 2px;
+path.highcharts-graph {
+/*    stroke: rgba(255,255,255,0.8);*/
 }
-*/
 
-/* Creates a small triangle extender for the tooltip */
-/*
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
+rect.highcharts-background {
+    fill: rgba(0,0,0,0);
 }
-*/
 
-/* Style northward tooltips differently */
-/*
-.d3-tip.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
-}*/
+text.highcharts-credits {
+    display: none;
+}
+
+rect.highcharts-scrollbar-track {
+    fill: rgba(255,255,255,0.2);
+}
+rect.highcharts-scrollbar-thumb {
+    fill: rgba(255,255,255,0.8);
+}
+
+.footer {
+    position: relative;
+}
+
+#upload {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#upload-icon {
+    display: inline-block;
+    margin-left: 6%;
+    margin-top: -1%; 
+}
+
+#upload-label {
+    position: relative;
+    display: none;
+    bottom: 10px;
+    margin-left: 8px;
+    color: white;
+}
+
+#score {
+    position: absolute;
+    top: -22px;
+    width: 100%;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    z-index: -10;
+}
+#score span {
+    font-size: 24px;
+    padding-left: 10px
+}
