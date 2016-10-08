@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://use.fontawesome.com/1d9a0f2f24.js"></script>
+        <link rel="stylesheet" href="./static/styles.css">
+        <link rel="stylesheet" href="./static/lib/default.css">
+        <link rel="stylesheet" href="./static/lib/default.date.css">
+        <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    </head>
+    <body>
+        <div id="date_container">
+            <h1>Predict your parking occupancy</h1>
+            <form id="date-selector" class="input-container" action="/date">
+                <span class="label">From</span>
+                <input type="text" name="from" class="datepicker-from">
+                <span class="label">To</span>
+                <input type="text" name="to" class="datepicker-to">
+                <span type="submit" class="hexagon">Go!</span>
+            </form>
+        </div>
+        
+        
+        <div id="chart_container"></div>
+        <div class="footer">
+            <input id="upload" type="file" name="real-data" accept=".csv" />
+            <label id="upload-icon" for="upload" class="hexagon"><img class="icon icons8-Upload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAB4ElEQVR4Xu2a4XHDIAyF0SYZJd2kmazpJt2k3YQeObvnONgW8kM6188/ExB6H9LD4SLp5I+cXH8iAFbAyQmwBU5eALEmmHN+LxsgIveojQhrgUH8xyD8FgUhBMBM/Lj5IRDcASyID4PgCmBDfAgENwBK8e4QXAA0ineF0B2AUbwbhK4AVsTfUkrjEfgntvJZ+a7r6dANwJr4cubnnPP05UdEZGtOj5elLgA0QmoAikDNXCQIOACtgCUA3hCgALTiB5EvLTDd2ZZYeyoCBqA14bUKGAW1xrSAgACwJKoB4NEOuwHknC8ppe8K/dXjSwtgA8KbiHxZdn6csxvAQoKbZ3cLgIU1PkXkcZ+w54EAmCW4KV5jgjVRk1aDiC9rwAAMoi4i8qPZkdYKmBjjdW/ZP72AaZLtMcYKAJ0LtAJakiOAym+BFoCosawAFMnWOGwBtsDrfUBrFSHG0wMQFC0x6AH0AHrA6o2Qpa0sc2iCFmqIOTRBmiBNkCb4dDMjEmLIIYta7wQR5juPQQA9qGpi8hg8+zGoqRKPMWEe4CFOswYBaCj95zHmCpi7eDSk8h8jSw6mSbUXGcviyDkEwApwbgFk+UbGMntAZNLItQkASfOIsVgBR9w1ZM6sACTNI8b6BRrGIFC28/3NAAAAAElFTkSuQmCC" width="22" height="22" ></label>
+            <span id="upload-label">Upload real data</span>
+            <div id="score">accuracy rating: <span></span></div>
+        </div>
+        
+<!--
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+-->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script src="http://code.highcharts.com/stock/highstock.js"></script>
+        <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+        <script src="./static/lib/picker.js"></script>
+        <script src="./static/lib/picker.date.js"></script>
+        <script src="./static/scripts.js?ver=1.3"></script>
+    </body>
+</html>
