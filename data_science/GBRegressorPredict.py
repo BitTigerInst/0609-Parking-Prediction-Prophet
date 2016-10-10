@@ -1,3 +1,6 @@
+'''Gradient Boosting Regressor'''
+from sklearn.ensemble import GradientBoostingRegressor
+
 import unicodecsv
 from datetime import datetime as dt
 import datetime
@@ -18,29 +21,8 @@ for row in rawTrain:
 	y.append(occupancy)
 
 
-#print X
-#raw_input('break')
-#print y
-
-
-'''
-train part
-'''
-from sklearn.tree import DecisionTreeRegressor
-clf = DecisionTreeRegressor(random_state = 0)
-clf = clf.fit(X,y)
-
-
-'''deal with input
-with open('test.csv','rb') as f:
-	reader = unicodecsv.DictReader(f)
-	rawTest = list(reader)
-X = []
-for row in rawTest:
-	curDate = dt.strptime(row['time'],'%Y-%m-%d %H:%M:%S')
-	temp = [curDate.year, curDate.month, curDate.day, curDate.hour]
-	X.append(temp)
-'''
+clf = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, \
+		max_depth=1, random_state=0, loss='ls').fit(X, y)
 
 '''new input: from -> to'''
 start = dt(2015,11,1,0,0,0)
@@ -66,14 +48,8 @@ for i in range(len(X)):
 
 ''' output predict as csv file '''
 keys = predictAns[0].keys()
-with open('predict_DT.csv','wb') as f:
+with open('predict_GB.csv','wb') as f:
 	writer = unicodecsv.DictWriter(f,keys)
 	writer.writeheader()
 	writer.writerows(predictAns)
 
-
-'''
-import json
-with open('predict.json','w') as f:
-	json.dump(predictAns, f, indent=4, sort_keys=True, default=lambda x:str(x))
-'''

@@ -3,7 +3,7 @@ from datetime import datetime as dt
 from datetime import timedelta
 
 # Read Raw Data
-with open('trans.csv','rb') as f:
+with open('raw.csv','rb') as f:
 	reader = unicodecsv.DictReader(f)
 	rawData = list(reader)
 #print rawData[0]

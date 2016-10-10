@@ -1,10 +1,11 @@
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 
 '''read csv train'''
-import pandas
-import pandas.DataFrame as df
-pandas.read_csv("train.csv")
+import pandas as pd
+data = pd.read_csv("train.csv")
 
-'''plot as histgram'''
-plot.hist()
+'''plot as hisotgram'''
+plt.figure(figsize=(12,9))
+ax = plt.subplot(111)
 
+plt.hist(list(data['occupancy']),bins=100)
