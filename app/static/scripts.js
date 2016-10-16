@@ -103,7 +103,7 @@ $(function () {
     
     $("#date-selector").submit(function(event){
         event.preventDefault();
-        $.get( '/test', $('#date-selector').serialize(), function(data) {
+        $.get('/date', $('#date-selector').serialize(), function(data) {
             
             for(var i in data) {
                 var item = data[i];
